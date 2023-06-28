@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="app/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="app/dist/css/adminlte.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="app/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 </head> 
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -80,12 +82,52 @@
   <!-- /.card -->
 </div>
 <!-- /.login-box -->
-<!-- hgzjhcbjzb -->
+<!--  -->
 <!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="app/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="app/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<script src="app/dist/js/adminlte.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="app/plugins/sweetalert2/sweetalert2.min.js"></script>
 </body>
+<?php
+if(isset ($_GET['error'])){
+$x = ($_GET['error']);
+  if($x==1){
+    echo "
+    <script>
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'center-top',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    Toast.fire({
+      icon: 'warning',
+      title: 'Login Gagal.'
+    })
+    </script>";
+  }
+  else if($x==2){
+    echo "
+    <script>
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'center-top',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    Toast.fire({
+      icon: 'warning',
+      title: 'Silahkan Inputkan Username & Password'
+    })
+    </script>";
+  }
+  else {
+      echo '';
+    }
+  }
+  ?>
 </html>
