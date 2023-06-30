@@ -14,26 +14,28 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Semester</th>
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
                      <?php 
-                     $query = 
+                     $no = 0;
+                     $query = mysqli_query($koneksi,"SELECT * FROM tb_mahasiswa");
+                    while($mhs = mysqli_fetch_array($query)){
+                      $no++
+                    ?>
                   <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
+                    <td width='5%'><?php echo $no;?></td>
+                    <td><?php echo $mhs['nama'];?></td>
+                    <td><?php echo $mhs['nim'];?></td>
+                    <td><?php echo $mhs['semester'];?></td>>
                     <td>X</td>
                   </tr>
-                  
+                  <?php }?>
                   </tbody>
                   <tfoot>
                   <tr>

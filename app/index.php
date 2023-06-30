@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include ('header.php');?>
+<?php 
+session_start();
+include ('header.php');?>
 <?php include ('../conf/config.php');?>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   <!-- Preloader -->
-  <?php include('preloarder.php')?>
+  <?php include ('preloader.php')?>
 
   <!-- Navbar -->
   <?php include ('navbar.php');?>
